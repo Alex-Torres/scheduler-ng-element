@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myElement';
+  constructor() {}
+
+  @Input() number1: any = 0;
+  @Input() number2: any = 0;
+
+  // tslint:disable-next-line: no-output-on-prefix
+  @Output() onCalculation: EventEmitter<number> = new EventEmitter<number>();
+
+  onClick() {
+    this.onCalculation.emit(
+      Number.parseInt(this.number1) + Number.parseInt(this.number2)
+    );
+  }
 }
