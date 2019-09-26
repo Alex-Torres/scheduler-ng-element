@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import chartOptions from './global-chart-options';
+import * as Highcharts from 'highcharts';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +10,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class AppComponent {
   constructor() {}
 
-  @Input() number1: any = 0;
-  @Input() number2: any = 0;
+  @Input() title = 'Highcharts Chart ng Element!';
+  Highcharts = Highcharts;
+  chartOptions = chartOptions;
 
-  // tslint:disable-next-line: no-output-on-prefix
-  @Output() onCalculation: EventEmitter<number> = new EventEmitter<number>();
 
-  onClick() {
-    this.onCalculation.emit(
-      Number.parseInt(this.number1) + Number.parseInt(this.number2)
-    );
-  }
+
+
 }
