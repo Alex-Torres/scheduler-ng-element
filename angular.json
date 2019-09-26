@@ -25,9 +25,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/document-register-element/build/document-register-element.js",
-              "node_modules/highcharts/highcharts.js",
-              "node_modules/highcharts-angular/esm2015/highcharts-angular.js"
+              "node_modules/document-register-element/build/document-register-element.js"
             ]
           },
           "configurations": {
@@ -50,13 +48,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "25mb",
+                  "maximumError": "25mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "25mb",
+                  "maximumError": "25mb"
                 }
               ]
             }
